@@ -27,7 +27,7 @@ STATION_TYPE = "11"
 RESP_CODE = "11187"
 
 # ================= FUNCTIONS ================= #
-
+# Test
 def get_rfid(canister_id):
     query = "SELECT rfid FROM canister_master WHERE id=%s"
     cursor.execute(query, (canister_id,))
