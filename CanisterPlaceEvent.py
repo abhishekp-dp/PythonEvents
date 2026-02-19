@@ -6,6 +6,7 @@ import re
 # ================= DB CONNECTION ================= #
 
 try:
+    # noinspection PyInterpreter
     connection = pymysql.connect(
         host="172.16.7.86",
         user="qa_write",
