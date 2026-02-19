@@ -9,7 +9,6 @@ except Exception as e:
 x=connection.cursor()
 
 batch_id = int(input('Enter Batch ID:'))
-
 try:
     def transfer_data(batch_id):
         data = '''SELECT DISTINCT(pad.canister_id_id), pad.device_id_id, pad.quadrant \
