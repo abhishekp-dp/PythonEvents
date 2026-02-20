@@ -117,34 +117,35 @@ def hit_event_api(station_id, electronics_location, value):
 # ================= MAIN FLOW ================= #
 
 try:
-    canister_id = int(input("Enter Canister ID: "))
-    drawer_input = input("Enter Drawer & Slot (e.g. A10-5): ")
+    while True:
+        canister_id = int(input("Enter Canister ID: "))
+        drawer_input = input("Enter Drawer & Slot (e.g. A10-5): ")
 
-    match = re.match(r"([A-D]\d+)\s*-\s*(\d)", drawer_input)
-    if not match:
-        raise Exception("Invalid input format. Use A10-5")
+        match = re.match(r"([A-D]\d+)\s*-\s*(\d)", drawer_input)
+        if not match:
+            raise Exception("Invalid input format. Use A10-5")
 
-    drawer, slot = match.groups()
-    slot = int(slot)
+        drawer, slot = match.groups()
+        slot = int(slot)
 
-    print("\nFetching RFID...")
-    rfid = get_rfid(canister_id)
-    print("RFID:", rfid)
+        print("\nFetching RFID...")
+        rfid = get_rfid(canister_id)
+        print("RFID:", rfid)
 
-    station_id = get_station_id(drawer)
-    electronics_location = get_electronics_location(drawer, slot)
+        station_id = get_station_id(drawer)
+        electronics_location = get_electronics_location(drawer, slot)
 
-    print("\nResolved values:")
-    print("Drawer           :", drawer)
-    print("Slot (Human)     :", slot)
-    print("Station ID       :", station_id)
-    print("Electronics Loc  :", electronics_location)
+        print("\nResolved values:")
+        print("Drawer           :", drawer)
+        print("Slot (Human)     :", slot)
+        print("Station ID       :", station_id)
+        print("Electronics Loc  :", electronics_location)
 
-    print("\nTriggering EEPROM placed event...")
-    response = hit_event_api(station_id, electronics_location, rfid)
+        print("\nTriggering EEPROM placed event...")
+        response = hit_event_api(station_id, electronics_location, rfid)
 
-    print("\n✅ Event triggered successfully")
-    print("API Response:", response)
+        print("\n✅ Event triggered successfully")
+        print("API Response:", response)
 
 except Exception as e:
     print("❌ Error:", e)
