@@ -8,7 +8,7 @@ DB_CONFIG = {
     "host": "172.16.7.86",
     "user": "qa_write",
     "passwd": "cWFfd3JpdGVfcGFzc3dvcmQ=",
-    "db": "dpws_qa_04"
+    "db": "dpws_qa_06"
 }
 
 LOGIN_URL = "https://qa-auth.dosepack.com/api/login"

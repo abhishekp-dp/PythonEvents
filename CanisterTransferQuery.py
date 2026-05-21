@@ -1,7 +1,10 @@
 import mysql.connector as connector
 import pymysql
 try:
-    connection=pymysql.connect(host="172.16.7.86",user="qa_write",passwd="cWFfd3JpdGVfcGFzc3dvcmQ=",db='dpws_qa_04')
+    connection=pymysql.connect(host="172.16.7.86",
+                               user="qa_write",
+                               passwd="cWFfd3JpdGVfcGFzc3dvcmQ=",
+                               db='dpws_qa_06')
 
 except Exception as e:
     print(e)

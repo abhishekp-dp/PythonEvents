@@ -10,7 +10,7 @@ try:
         host="172.16.7.86",
         user="qa_write",
         passwd="cWFfd3JpdGVfcGFzc3dvcmQ=",
-        db="dpws_qa_04"
+        db="dpws_qa_06"
     )
 except Exception as e:
     print("❌ DB Connection failed:", e)
@@ -20,7 +20,7 @@ cursor = connection.cursor()
 
 # ================= CONSTANTS ================= #
 
-API_URL = "http://172.16.4.112:10031/api/event"
+API_URL = "http://172.16.7.125:10002/api/event"
 
 STATION_TYPE = "11"
 RESP_CODE = "11187"
